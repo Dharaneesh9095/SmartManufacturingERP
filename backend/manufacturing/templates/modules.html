@@ -1,0 +1,91 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ERP Modules</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=200">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>SM ERP</h2>
+    <a href="/">Back to Home</a>
+</nav>
+
+<section class="module-title">
+    <h1>ERP Modules</h1>
+    <p>Welcome to the SM ERP Modules!</p>
+</section>
+
+<div class="module-grid">
+
+    <div class="module-card">
+        <img src="{% static 'images/employeemanagement.jpg' %}">
+        <h2>Employee Management</h2>
+        <p>Manage employee records, payroll and departments.</p>
+        <a href="/api/employees/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/attendance.jpg' %}">
+        <h2>Attendance Management</h2>
+        <p>Track attendance, shifts and working hours.</p>
+        <a href="/api/attendance/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/leavee.jpg' %}">
+        <h2>Leave Management</h2>
+        <p>Manage leave requests and approvals.</p>
+        <a href="/api/leave/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/inventory.jpg' %}">
+        <h2>Inventory Management</h2>
+        <p>Manage stock, suppliers and warehouse operations.</p>
+        <a href="/api/inventory/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/planning.jpg' %}">
+        <h2>Production Management</h2>
+        <p>Production planning and manufacturing schedules.</p>
+        <a href="/api/production/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/qualityt.jpg' %}">
+        <h2>Quality Inspection</h2>
+        <p>Inspection reports and defect management.</p>
+        <a href="/api/quality/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/nx.jpg' %}">
+        <h2>NX Drawing Vault</h2>
+        <p>Store NX CAD drawings and revisions securely.</p>
+        <a href="/api/nx-drawings/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/nxnext.jpg' %}">
+        <h2>NX Part Generator</h2>
+        <p>Generate NX parts, STEP files and PDFs.</p>
+        <a href="/api/nx-part-generator/">Open Module</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/ai1.jpg' %}">
+        <h2>AI Production Prediction</h2>
+        <p>Predict downtime and production delays.</p>
+        <a href="/api/ai-prediction/">Open Module</a>
+    </div>
+
+</div>
+
+</body>
+</html>

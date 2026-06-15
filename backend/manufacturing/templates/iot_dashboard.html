@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Machine Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=221">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>IoT Machine Dashboard</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Industry 4.0 Machine Monitoring</h1>
+    <p>Live CNC machine data using IoT sensors and ERP integration</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="temp">0</h1>
+        <p>Temperature °C</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="rpm">0</h1>
+        <p>Machine RPM</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="power">0</h1>
+        <p>Power kW</p>
+    </div>
+
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="status">Loading</h1>
+        <p>Machine Status</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="health">0</h1>
+        <p>Machine Health</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="efficiency">0</h1>
+        <p>Production Efficiency %</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+    <h2>Machine Live Status</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+            <span>IOT SENSOR DATA</span>
+
+            <h3>Real-Time CNC Monitoring</h3>
+
+            <p>
+                This IoT dashboard displays simulated machine temperature,
+                RPM, power usage, machine health, production efficiency and
+                machine status. Later this can be connected to real ESP32,
+                PLC or CNC machine sensors.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>Live Machine Temperature Monitoring</li>
+                <li>Real-Time RPM Tracking</li>
+                <li>Power Consumption Monitoring</li>
+                <li>Machine Health Analysis</li>
+                <li>Production Efficiency Tracking</li>
+            </ul>
+
+            <h1 id="status-large" style="font-size:50px;color:#16a34a;">
+                Loading...
+            </h1>
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}" alt="IoT Machine">
+        </div>
+
+    </div>
+</section>
+
+<section class="success-section">
+    <h2>IoT + ERP Integration</h2>
+
+    <div class="success-box">
+
+        <div class="success-image">
+            <img src="{% static 'images/planning1.jpg' %}" alt="IoT ERP">
+        </div>
+
+        <div class="success-content">
+            <span>INDUSTRY 4.0</span>
+
+            <h3>Smart Factory Sensor Integration</h3>
+
+            <p>
+                IoT sensor data can be sent from machines to the ERP using
+                REST APIs. This helps monitor machine performance, detect
+                abnormal conditions and improve production decisions.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>ESP32 Sensor Integration</li>
+                <li>PLC Data Monitoring</li>
+                <li>CNC Machine Status Tracking</li>
+                <li>Predictive Maintenance</li>
+                <li>Real-Time Factory Analytics</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function loadIoTData(){
+    fetch('/api/iot-dashboard/')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('temp').innerText = data.machine_temperature;
+        document.getElementById('rpm').innerText = data.machine_rpm;
+        document.getElementById('power').innerText = data.power_consumption;
+        document.getElementById('status').innerText = data.machine_status;
+        document.getElementById('health').innerText = data.machine_health;
+        document.getElementById('efficiency').innerText = data.production_efficiency;
+        document.getElementById('status-large').innerText = data.machine_status;
+    })
+    .catch(error => {
+        console.log("IoT Dashboard Error:", error);
+    });
+}
+
+loadIoTData();
+
+setInterval(loadIoTData, 5000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Production Control | Smart ERP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="production-body">
+
+<section class="production-hero">
+    <nav class="production-nav">
+        <h2>SM ERP</h2>
+        <a href="/">Back to Home</a>
+    </nav>
+
+    <div class="production-hero-content">
+        <span>MANUFACTURING MODULE</span>
+        <h1>Production Control</h1>
+        <p>
+            Plan production orders, monitor machine status, track work progress,
+            reduce delays and improve manufacturing efficiency with smart ERP automation.
+        </p>
+        <a href="#orders" class="production-btn">View Production Orders</a>
+    </div>
+</section>
+
+<section class="production-kpi">
+    <div class="kpi-box">
+        <h2>124</h2>
+        <p>Active Work Orders</p>
+    </div>
+
+    <div class="kpi-box">
+        <h2>86%</h2>
+        <p>Production Efficiency</p>
+    </div>
+
+    <div class="kpi-box">
+        <h2>18</h2>
+        <p>Machines Running</p>
+    </div>
+
+    <div class="kpi-box">
+        <h2>07</h2>
+        <p>Delayed Orders</p>
+    </div>
+</section>
+
+<section class="production-overview">
+    <div class="overview-text">
+        <span>SMART PRODUCTION PLANNING</span>
+        <h2>Control Every Manufacturing Activity</h2>
+        <p>
+            The Production Control module manages production schedules,
+            work orders, machine allocation, operator activities and daily output.
+            It connects material availability, production planning and quality
+            inspection into one complete manufacturing workflow.
+        </p>
+
+        <div class="overview-points">
+            <div>✔ Production order creation</div>
+            <div>✔ Work center and machine allocation</div>
+            <div>✔ Operator task assignment</div>
+            <div>✔ Daily production quantity tracking</div>
+            <div>✔ Delay and downtime monitoring</div>
+            <div>✔ AI-based production forecasting</div>
+        </div>
+    </div>
+
+    <div class="overview-image">
+        <img src="{% static 'images/control.jpg' %}" alt="Production Planning">
+    </div>
+</section>
+
+<section class="machine-section">
+    <h2>Live Machine Status</h2>
+
+    <div class="machine-grid">
+        <div class="machine-card running">
+            <h3>CNC Machine 01</h3>
+            <p>Status: Running</p>
+            <span>Output: 320 Parts</span>
+        </div>
+
+        <div class="machine-card idle">
+            <h3>CNC Machine 02</h3>
+            <p>Status: Idle</p>
+            <span>Waiting for Material</span>
+        </div>
+
+        <div class="machine-card maintenance">
+            <h3>Lathe Machine 03</h3>
+            <p>Status: Maintenance</p>
+            <span>Tool Replacement</span>
+        </div>
+
+        <div class="machine-card running">
+            <h3>Assembly Line 04</h3>
+            <p>Status: Running</p>
+            <span>Output: 870 Units</span>
+        </div>
+    </div>
+</section>
+
+<section class="production-flow">
+    <h2>Production Workflow</h2>
+
+    <div class="flow-grid">
+        <div class="flow-step">
+            <span>01</span>
+            <h3>Plan</h3>
+            <p>Create production schedule based on customer demand.</p>
+        </div>
+
+        <div class="flow-step">
+            <span>02</span>
+            <h3>Material Check</h3>
+            <p>Verify raw material availability before production starts.</p>
+        </div>
+
+        <div class="flow-step">
+            <span>03</span>
+            <h3>Machine Assign</h3>
+            <p>Allocate machines, operators and work centers.</p>
+        </div>
+
+        <div class="flow-step">
+            <span>04</span>
+            <h3>Manufacture</h3>
+            <p>Track live production progress and machine output.</p>
+        </div>
+
+        <div class="flow-step">
+            <span>05</span>
+            <h3>Quality Check</h3>
+            <p>Send completed items for inspection and approval.</p>
+        </div>
+
+        <div class="flow-step">
+            <span>06</span>
+            <h3>Complete</h3>
+            <p>Update inventory and close the production order.</p>
+        </div>
+    </div>
+</section>
+
+<section class="production-orders" id="orders">
+    <h2>Production Orders</h2>
+
+    <table class="production-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Machine</th>
+                <th>Target Qty</th>
+                <th>Completed</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>PO-1001</td>
+                <td>Gear Housing</td>
+                <td>CNC Machine 01</td>
+                <td>500</td>
+                <td>320</td>
+                <td><span class="prod-running">Running</span></td>
+            </tr>
+
+            <tr>
+                <td>PO-1002</td>
+                <td>Motor Bracket</td>
+                <td>Lathe Machine 03</td>
+                <td>250</td>
+                <td>120</td>
+                <td><span class="prod-delay">Delayed</span></td>
+            </tr>
+
+            <tr>
+                <td>PO-1003</td>
+                <td>Base Plate</td>
+                <td>CNC Machine 02</td>
+                <td>300</td>
+                <td>300</td>
+                <td><span class="prod-complete">Completed</span></td>
+            </tr>
+
+            <tr>
+                <td>PO-1004</td>
+                <td>Assembly Frame</td>
+                <td>Assembly Line 04</td>
+                <td>900</td>
+                <td>870</td>
+                <td><span class="prod-running">Running</span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="ai-production">
+    <div class="ai-production-image">
+        <img src="{% static 'images/ai.jpg' %}" alt="AI Production">
+    </div>
+
+    <div class="ai-production-content">
+        <span>FUTURE AI MODULE</span>
+        <h2>AI Production Forecasting</h2>
+        <p>
+            AI can analyze previous production orders, machine downtime,
+            material availability and operator efficiency to predict production
+            delays and suggest better planning decisions.
+        </p>
+
+        <ul>
+            <li>✔ Predict machine downtime</li>
+            <li>✔ Estimate production completion time</li>
+            <li>✔ Detect production bottlenecks</li>
+            <li>✔ Suggest best machine allocation</li>
+            <li>✔ Improve production planning accuracy</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        © 2026 Smart Manufacturing ERP | Production Control Module
+    </div>
+</footer>
+
+</body>
+</html>

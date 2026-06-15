@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=280">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Sales Management</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Sales Order Dashboard</h1>
+    <p>Manage customers, sales orders, revenue and delivery status.</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="customers">0</h1>
+        <p>Total Customers</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="sales-orders">0</h1>
+        <p>Sales Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="completed">0</h1>
+        <p>Completed Orders</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Sales Overview</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+            <span>SALES MANAGEMENT</span>
+
+            <h3>Smart Sales Order System</h3>
+
+            <p>
+                This module manages customers, sales orders, product sales,
+                total revenue and delivery status.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>Customer Management</li>
+                <li>Sales Order Tracking</li>
+                <li>Automatic Revenue Calculation</li>
+                <li>Completed / Pending Status</li>
+            </ul>
+
+            <h2>
+                Total Revenue: ₹<span id="revenue">0</span>
+            </h2>
+
+            <br>
+
+            <a href="/api/customers/">Customer API</a>
+            <br><br>
+            <a href="/api/sales-orders/">Sales Order API</a>
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}">
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+fetch('/api/sales-dashboard/')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('customers').innerText = data.total_customers;
+    document.getElementById('sales-orders').innerText = data.total_sales_orders;
+    document.getElementById('completed').innerText = data.completed_orders;
+    document.getElementById('revenue').innerText = data.total_revenue;
+});
+</script>
+
+</body>
+</html>

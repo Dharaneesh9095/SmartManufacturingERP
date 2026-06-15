@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Attendance Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=250">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Employee Attendance</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Employee Attendance Dashboard</h1>
+    <p>Monitor employee attendance, leave and workforce performance</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="employees">0</h1>
+        <p>Total Employees</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="attendance">0</h1>
+        <p>Attendance Records</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="leaves">0</h1>
+        <p>Leave Requests</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Workforce Summary</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+
+            <span>HR MANAGEMENT</span>
+
+            <h3>Smart Employee Monitoring</h3>
+
+            <p>
+                This module helps monitor employee attendance, leave requests,
+                department-wise workforce data and salary information.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>Employee Database</li>
+                <li>Attendance Tracking</li>
+                <li>Leave Approval Monitoring</li>
+                <li>Department Workforce Analysis</li>
+            </ul>
+
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}">
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+fetch('/api/dashboard/')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('employees').innerText = data.total_employees;
+    document.getElementById('attendance').innerText = data.total_attendance;
+    document.getElementById('leaves').innerText = data.total_leaves;
+});
+</script>
+
+</body>
+</html>

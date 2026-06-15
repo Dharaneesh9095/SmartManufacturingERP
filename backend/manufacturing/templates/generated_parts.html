@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated NX Parts</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<nav class="module-navbar">
+    <h2>Generated NX Parts</h2>
+    <a href="/nx-automation/">Back To NX Automation</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Generated Parts Management</h1>
+
+    <p>
+        View all generated NX, STEP and PDF files from
+        Siemens NX Automation Service.
+    </p>
+</section>
+
+<section style="padding:40px;">
+
+    <table
+        style="
+        width:100%;
+        border-collapse:collapse;
+        background:white;
+        box-shadow:0 0 15px rgba(0,0,0,0.1);
+        ">
+
+        <thead>
+
+            <tr style="background:#1f2937;color:white;">
+
+                <th style="padding:15px;">ID</th>
+
+                <th style="padding:15px;">Part Name</th>
+
+                <th style="padding:15px;">NX File</th>
+
+                <th style="padding:15px;">STEP File</th>
+
+                <th style="padding:15px;">PDF File</th>
+
+                <th style="padding:15px;">Downloads</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for part in parts %}
+
+            <tr style="border-bottom:1px solid #ddd;">
+
+                <td style="padding:15px;">
+                    {{ part.id }}
+                </td>
+
+                <td style="padding:15px;">
+                    {{ part.part_name }}
+                </td>
+
+                <td style="padding:15px;">
+                    {{ part.nx_file }}
+                </td>
+
+                <td style="padding:15px;">
+                    {{ part.step_file }}
+                </td>
+
+                <td style="padding:15px;">
+                    {{ part.pdf_file }}
+                </td>
+
+                <td style="padding:15px;">
+
+                    <a
+                        href="/download/nx/{{ part.id }}/"
+                        style="
+                        padding:8px 12px;
+                        background:#2563eb;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:5px;">
+                        NX
+                    </a>
+
+                    <a
+                        href="/download/step/{{ part.id }}/"
+                        style="
+                        padding:8px 12px;
+                        background:#059669;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:5px;">
+                        STEP
+                    </a>
+
+                    <a
+                        href="/download/pdf/{{ part.id }}/"
+                        style="
+                        padding:8px 12px;
+                        background:#dc2626;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:5px;">
+                        PDF
+                    </a>
+
+                </td>
+
+            </tr>
+
+        {% empty %}
+
+            <tr>
+
+                <td colspan="6" style="padding:20px;text-align:center;">
+                    No Generated Parts Found
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</section>
+
+</body>
+</html>

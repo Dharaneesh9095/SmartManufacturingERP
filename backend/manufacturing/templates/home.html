@@ -1,0 +1,217 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Manufacturing ERP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=203">
+</head>
+
+<body>
+
+<section class="hero">
+    <nav class="navbar">
+        <div class="logo">SM ERP</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard/">Dashboard</a>
+            <a href="/nx-automation/">NX Automation</a>
+            <a href="/api/">API</a>
+            <a href="/admin/">Admin</a>
+            <a href="#footer">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-content">
+        <h1>Smart Manufacturing<br>ERP Future</h1>
+        <p>AI Powered ERP with Siemens NX Automation</p>
+
+        <div class="hero-buttons">
+            <a href="/modules/" class="primary-btn">View Modules</a>
+            <a href="/admin/" class="secondary-btn">Admin Login</a>
+        </div>
+    </div>
+</section>
+
+<section class="about-manufacturing">
+    <h2>Smart Factory Solutions</h2>
+
+    <p>
+        Smart Manufacturing ERP helps manufacturers improve productivity,
+        automate workflows, manage inventory, monitor production and maintain
+        high-quality standards using ERP, Siemens NX automation and AI analytics.
+    </p>
+
+    <p>
+        Gain real-time visibility into every plant floor operation and streamline
+        workforce, production, inventory and quality processes in one smart platform.
+    </p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="employees-count">0</h1>
+        <p>Total Employees</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="attendance-count">0</h1>
+        <p>Attendance Records</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="inventory-count">0</h1>
+        <p>Inventory Items</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="machines-count">0</h1>
+        <p>Connected Machines</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="production-count">0</h1>
+        <p>Production Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="quality-count">0</h1>
+        <p>Quality Inspections</p>
+    </div>
+
+</section>
+
+<section class="segments">
+    <h2>Learn More About the Modules We Serve</h2>
+
+    <div class="segment-grid">
+
+        <div class="segment-card">
+            <a href="/material-management/">
+                <img src="{% static 'images/material1.jpg' %}" alt="Material Management">
+            </a>
+            <h3>Material Management</h3>
+            <p>Manage raw materials, warehouse stock and supplier operations.</p>
+            <a href="/material-management/" class="module-btn">Learn More</a>
+        </div>
+
+        <div class="segment-card">
+            <a href="/production-control/">
+                <img src="{% static 'images/planning1.jpg' %}" alt="Production Control">
+            </a>
+            <h3>Production Control</h3>
+            <p>Plan manufacturing schedules and monitor production activities.</p>
+            <a href="/production-control/" class="module-btn">Learn More</a>
+        </div>
+
+        <div class="segment-card">
+            <a href="/quality-assurance/">
+                <img src="{% static 'images/quality1.jpg' %}" alt="Quality Assurance">
+            </a>
+            <h3>Quality Assurance</h3>
+            <p>Ensure product quality, inspection records and compliance standards.</p>
+            <a href="/quality-assurance/" class="module-btn">Learn More</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="success-section">
+    <h2>Featured Smart ERP Success Story</h2>
+
+    <div class="success-box">
+
+        <div class="success-image">
+            <img src="{% static 'images/ai.jpg' %}" alt="AI ERP">
+        </div>
+
+        <div class="success-content">
+            <span>SUCCESS STORY</span>
+
+            <h3>
+                Smart Manufacturing ERP Improves Production Accuracy
+                with NX Automation and AI Prediction
+            </h3>
+
+            <p>
+                A manufacturing company can use Smart ERP to manage employees,
+                inventory, production planning, quality inspection and NX CAD
+                automation from one platform. AI analytics helps predict delays,
+                machine downtime and material shortages.
+            </p>
+
+            <a href="/modules/">Learn More</a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer" id="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>Smart Manufacturing ERP</h2>
+            <p>
+                Smart Manufacturing ERP with NX Automation provides Employee,
+                Attendance, Inventory, Production, Quality, NX Automation and AI modules.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>ERP Modules</h3>
+            <ul>
+                <li>Employee Management</li>
+                <li>Attendance Management</li>
+                <li>Leave Management</li>
+                <li>Inventory Management</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>NX Automation</h3>
+            <ul>
+                <li>NX Drawing Vault</li>
+                <li>NX Part Generator</li>
+                <li>CAD Automation</li>
+                <li>STEP/PDF Export</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/modules/">Modules</a></li>
+                <li><a href="/api/">API</a></li>
+                <li><a href="/admin/">Admin</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Smart Manufacturing ERP with NX Automation
+    </div>
+</footer>
+
+<script>
+fetch('/api/dashboard/')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('employees-count').innerText = data.total_employees;
+    document.getElementById('attendance-count').innerText = data.total_attendance;
+    document.getElementById('inventory-count').innerText = data.total_inventory;
+    document.getElementById('machines-count').innerText = data.total_machines;
+    document.getElementById('production-count').innerText = data.total_production_orders;
+    document.getElementById('quality-count').innerText = data.total_quality_inspections;
+})
+.catch(error => {
+    console.log("Dashboard API Error:", error);
+});
+</script>
+
+</body>
+</html>

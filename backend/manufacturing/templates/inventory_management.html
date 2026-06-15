@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=260">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Inventory Management</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Inventory Dashboard</h1>
+    <p>Track raw materials, stock levels and warehouse inventory.</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="items">0</h1>
+        <p>Total Items</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="quantity">0</h1>
+        <p>Total Quantity</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="lowstock">0</h1>
+        <p>Low Stock Items</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Inventory Overview</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+
+            <span>WAREHOUSE MANAGEMENT</span>
+
+            <h3>Inventory Analytics</h3>
+
+            <ul style="line-height:2;">
+                <li>Material Tracking</li>
+                <li>Warehouse Monitoring</li>
+                <li>Stock Analysis</li>
+                <li>Low Stock Alerts</li>
+                <li>Purchase Planning</li>
+            </ul>
+
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}">
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+fetch('/api/inventory-dashboard/')
+.then(response => response.json())
+.then(data => {
+
+    document.getElementById('items').innerText =
+        data.total_items;
+
+    document.getElementById('quantity').innerText =
+        data.total_quantity;
+
+    document.getElementById('lowstock').innerText =
+        data.low_stock_items;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Material Management | Smart ERP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="materials-body">
+
+<section class="materials-hero">
+    <div class="materials-overlay">
+        <nav class="module-navbar">
+            <h2>SM ERP</h2>
+            <a href="/">Back to Home</a>
+        </nav>
+
+        <div class="materials-hero-content">
+            <h1>Material Management</h1>
+            <p>
+                Control raw materials, purchase orders, warehouse stock,
+                supplier performance and production usage in one smart ERP module.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="material-summary">
+    <div class="summary-card">
+        <h2>₹ 12.5L</h2>
+        <p>Total Inventory Value</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>320</h2>
+        <p>Active Material Items</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>48</h2>
+        <p>Approved Suppliers</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>15</h2>
+        <p>Low Stock Alerts</p>
+    </div>
+</section>
+
+<section class="material-dashboard">
+    <div class="dashboard-left">
+        <h2>Real-Time Material Tracking</h2>
+        <p>
+            The Material Management module helps manufacturing companies track
+            every material movement from purchase request to warehouse storage
+            and production consumption.
+        </p>
+
+        <div class="feature-list">
+            <div>✔ Raw material stock monitoring</div>
+            <div>✔ Purchase request and order tracking</div>
+            <div>✔ Supplier delivery status</div>
+            <div>✔ Low stock and reorder alerts</div>
+            <div>✔ Material usage in production</div>
+        </div>
+    </div>
+
+    <div class="dashboard-right">
+        <img src="{% static 'images/realtime.jpg' %}" alt="Inventory">
+    </div>
+</section>
+
+<section class="material-process">
+    <h2>Material Process Flow</h2>
+
+    <div class="process-line">
+        <div class="process-step">
+            <span>01</span>
+            <h3>Request</h3>
+            <p>Create material requirement request.</p>
+        </div>
+
+        <div class="process-step">
+            <span>02</span>
+            <h3>Purchase</h3>
+            <p>Generate purchase order for suppliers.</p>
+        </div>
+
+        <div class="process-step">
+            <span>03</span>
+            <h3>Receive</h3>
+            <p>Receive materials into warehouse.</p>
+        </div>
+
+        <div class="process-step">
+            <span>04</span>
+            <h3>Inspect</h3>
+            <p>Quality check before stock approval.</p>
+        </div>
+
+        <div class="process-step">
+            <span>05</span>
+            <h3>Issue</h3>
+            <p>Send approved materials to production.</p>
+        </div>
+    </div>
+</section>
+
+<section class="material-table-section">
+    <h2>Sample Material Stock Table</h2>
+
+    <table class="material-table">
+        <thead>
+            <tr>
+                <th>Material Code</th>
+                <th>Material Name</th>
+                <th>Category</th>
+                <th>Stock Qty</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>MAT-001</td>
+                <td>Steel Rod</td>
+                <td>Raw Material</td>
+                <td>450 Kg</td>
+                <td><span class="status-ok">Available</span></td>
+            </tr>
+
+            <tr>
+                <td>MAT-002</td>
+                <td>Aluminium Sheet</td>
+                <td>Raw Material</td>
+                <td>120 Kg</td>
+                <td><span class="status-low">Low Stock</span></td>
+            </tr>
+
+            <tr>
+                <td>MAT-003</td>
+                <td>Bearing Set</td>
+                <td>Mechanical Part</td>
+                <td>80 Nos</td>
+                <td><span class="status-ok">Available</span></td>
+            </tr>
+
+            <tr>
+                <td>MAT-004</td>
+                <td>Gear Housing</td>
+                <td>NX Part</td>
+                <td>35 Nos</td>
+                <td><span class="status-warning">Inspection</span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="ai-material">
+    <div>
+        <h2>AI Material Forecasting</h2>
+        <p>
+            Future AI integration predicts material shortages, supplier delays,
+            reorder quantity and production demand based on historical ERP data.
+        </p>
+    </div>
+
+    <img src="{% static 'images/ai.jpg' %}" alt="AI Forecasting">
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        © 2026 Smart Manufacturing ERP | Material Management Module
+    </div>
+</footer>
+
+</body>
+</html>

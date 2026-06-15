@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quality Assurance | Smart ERP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="quality-body">
+
+<section class="quality-hero">
+    <nav class="quality-nav">
+        <h2>SM ERP</h2>
+        <a href="/">Back to Home</a>
+    </nav>
+
+    <div class="quality-hero-content">
+        <span>QUALITY CONTROL MODULE</span>
+        <h1>Quality Assurance</h1>
+        <p>
+            Manage inspections, defect tracking, compliance reports and AI-powered
+            quality prediction for smart manufacturing operations.
+        </p>
+        <a href="#inspection" class="quality-btn">View Inspection Records</a>
+    </div>
+</section>
+
+<section class="quality-cards">
+    <div class="quality-card">
+        <h2>96%</h2>
+        <p>Quality Pass Rate</p>
+    </div>
+
+    <div class="quality-card">
+        <h2>28</h2>
+        <p>Open Inspections</p>
+    </div>
+
+    <div class="quality-card">
+        <h2>09</h2>
+        <p>Defect Reports</p>
+    </div>
+
+    <div class="quality-card">
+        <h2>14</h2>
+        <p>NCR Records</p>
+    </div>
+</section>
+
+<section class="quality-overview">
+    <div class="quality-image">
+        <img src="{% static 'images/qualitycontrol.jpg' %}" alt="Quality Assurance">
+    </div>
+
+    <div class="quality-text">
+        <span>SMART INSPECTION SYSTEM</span>
+        <h2>Improve Product Quality and Reduce Defects</h2>
+        <p>
+            The Quality Assurance module helps manufacturers track product inspection,
+            defect history, rejection reasons, corrective actions and approval status.
+            It connects production, inventory and customer delivery with strict quality control.
+        </p>
+
+        <div class="quality-list">
+            <div>✔ Incoming material inspection</div>
+            <div>✔ In-process quality checking</div>
+            <div>✔ Final product approval</div>
+            <div>✔ Defect and rejection tracking</div>
+            <div>✔ NCR and corrective action records</div>
+            <div>✔ AI defect prediction support</div>
+        </div>
+    </div>
+</section>
+
+<section class="inspection-flow">
+    <h2>Quality Inspection Workflow</h2>
+
+    <div class="inspection-grid">
+        <div class="inspection-step">
+            <span>01</span>
+            <h3>Receive</h3>
+            <p>Receive material or finished product for inspection.</p>
+        </div>
+
+        <div class="inspection-step">
+            <span>02</span>
+            <h3>Inspect</h3>
+            <p>Check dimensions, visual quality and manufacturing standards.</p>
+        </div>
+
+        <div class="inspection-step">
+            <span>03</span>
+            <h3>Record</h3>
+            <p>Store inspection results, readings and defect details.</p>
+        </div>
+
+        <div class="inspection-step">
+            <span>04</span>
+            <h3>Approve</h3>
+            <p>Approve, reject or send product for rework.</p>
+        </div>
+    </div>
+</section>
+
+<section class="defect-section">
+    <h2>Defect Category Monitoring</h2>
+
+    <div class="defect-grid">
+        <div class="defect-box">
+            <h3>Dimensional Error</h3>
+            <p>Parts not matching tolerance or drawing dimensions.</p>
+        </div>
+
+        <div class="defect-box">
+            <h3>Surface Defect</h3>
+            <p>Scratches, cracks, finishing issues and visual defects.</p>
+        </div>
+
+        <div class="defect-box">
+            <h3>Assembly Issue</h3>
+            <p>Incorrect fitting, missing components or alignment problems.</p>
+        </div>
+
+        <div class="defect-box">
+            <h3>Material Failure</h3>
+            <p>Wrong material, poor strength or supplier quality issue.</p>
+        </div>
+    </div>
+</section>
+
+<section class="inspection-table-section" id="inspection">
+    <h2>Sample Inspection Records</h2>
+
+    <table class="inspection-table">
+        <thead>
+            <tr>
+                <th>Inspection ID</th>
+                <th>Product</th>
+                <th>Inspector</th>
+                <th>Result</th>
+                <th>Defect Type</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>QA-001</td>
+                <td>Gear Housing</td>
+                <td>Ramesh</td>
+                <td>Passed</td>
+                <td>None</td>
+                <td><span class="qa-pass">Approved</span></td>
+            </tr>
+
+            <tr>
+                <td>QA-002</td>
+                <td>Motor Bracket</td>
+                <td>Kumar</td>
+                <td>Failed</td>
+                <td>Dimensional Error</td>
+                <td><span class="qa-fail">Rejected</span></td>
+            </tr>
+
+            <tr>
+                <td>QA-003</td>
+                <td>Base Plate</td>
+                <td>Priya</td>
+                <td>Rework</td>
+                <td>Surface Defect</td>
+                <td><span class="qa-rework">Rework</span></td>
+            </tr>
+
+            <tr>
+                <td>QA-004</td>
+                <td>Assembly Frame</td>
+                <td>Arun</td>
+                <td>Passed</td>
+                <td>None</td>
+                <td><span class="qa-pass">Approved</span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="ncr-section">
+    <div class="ncr-content">
+        <span>NCR MANAGEMENT</span>
+        <h2>Non-Conformance Report Tracking</h2>
+        <p>
+            When a product fails quality inspection, the ERP creates a Non-Conformance
+            Report. This helps the quality team identify the problem, assign corrective
+            action and prevent repeated defects.
+        </p>
+
+        <ul>
+            <li>✔ Defect root cause analysis</li>
+            <li>✔ Corrective action assignment</li>
+            <li>✔ Supplier quality issue tracking</li>
+            <li>✔ Rework and rejection decision</li>
+            <li>✔ Quality approval history</li>
+        </ul>
+    </div>
+
+    <div class="ncr-image">
+        <img src="{% static 'images/ncr.jpg' %}" alt="NCR Tracking">
+    </div>
+</section>
+
+<section class="ai-quality">
+    <div class="ai-quality-image">
+        <img src="{% static 'images/ai.jpg' %}" alt="AI Quality Prediction">
+    </div>
+
+    <div class="ai-quality-content">
+        <span>FUTURE AI QUALITY MODULE</span>
+        <h2>AI Quality Prediction</h2>
+        <p>
+            AI can study inspection history, machine data, material quality and defect
+            patterns to predict possible quality failures before production is completed.
+        </p>
+
+        <div class="ai-quality-list">
+            <div>✔ Predict defect probability</div>
+            <div>✔ Identify weak production stages</div>
+            <div>✔ Suggest preventive actions</div>
+            <div>✔ Improve inspection accuracy</div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">
+        © 2026 Smart Manufacturing ERP | Quality Assurance Module
+    </div>
+</footer>
+
+</body>
+</html>

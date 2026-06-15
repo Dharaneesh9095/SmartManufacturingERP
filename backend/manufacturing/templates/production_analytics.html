@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Production Analytics</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=240">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Production Analytics</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Production Performance Dashboard</h1>
+    <p>Real-time manufacturing KPIs and production monitoring</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="orders">120</h1>
+        <p>Total Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="completed">95</h1>
+        <p>Completed Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="efficiency">92%</h1>
+        <p>Production Efficiency</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Production Summary</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+
+            <span>SMART MANUFACTURING</span>
+
+            <h3>Factory Performance Analysis</h3>
+
+            <ul style="line-height:2;">
+                <li>Total Orders Processed : 120</li>
+                <li>Completed Orders : 95</li>
+                <li>Running Orders : 20</li>
+                <li>Pending Orders : 5</li>
+                <li>Production Efficiency : 92%</li>
+            </ul>
+
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}">
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

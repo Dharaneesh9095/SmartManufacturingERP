@@ -1,0 +1,282 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NX Automation | Smart Manufacturing ERP</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=213">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>NX Automation</h2>
+    <a href="/">Back To Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Siemens NX Automation Platform</h1>
+    <p>
+        Automate CAD, CAM and Manufacturing processes using
+        Siemens NX Open API integrated with Smart ERP.
+    </p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="total-requests">0</h1>
+        <p>Total NX Requests</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="pending-requests">0</h1>
+        <p>Pending Requests</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="generated-parts">0</h1>
+        <p>Generated Parts</p>
+    </div>
+
+</section>
+
+<section class="module-title">
+    <h1>NX Automation Modules</h1>
+    <p>Design Automation • Manufacturing Automation • AI Analytics</p>
+</section>
+
+<section class="module-grid">
+
+    <div class="module-card">
+        <img src="{% static 'images/factory.jpg' %}" alt="NX Drawing Vault">
+
+        <h2>NX Drawing Vault</h2>
+
+        <p>
+            Manage and store NX drawings, revisions and approval workflows.
+        </p>
+
+        <ul style="padding:20px;text-align:left;">
+            <li>Upload NX Part</li>
+            <li>Store Version</li>
+            <li>Download PDF</li>
+            <li>Download STEP</li>
+            <li>Approval Workflow</li>
+        </ul>
+
+        <a href="/api/nx-drawings/">View Drawing API</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/planning1.jpg' %}" alt="NX Part Generator">
+
+        <h2>NX Part Generator</h2>
+
+        <p>
+            Automatically create NX CAD models from ERP data.
+        </p>
+
+        <ul style="padding:20px;text-align:left;">
+            <li>Bolt Diameter</li>
+            <li>Bolt Length</li>
+            <li>Material</li>
+            <li>Generate NX Model</li>
+            <li>Generate STEP</li>
+            <li>Generate PDF</li>
+        </ul>
+
+        <a href="/api/nx-part-requests/">Create NX Request</a>
+    </div>
+
+    <div class="module-card">
+        <img src="{% static 'images/quality1.jpg' %}" alt="NX Generated Parts">
+
+        <h2>NX Generated Parts</h2>
+
+        <p>
+            View generated NX, STEP and PDF output records.
+        </p>
+
+        <ul style="padding:20px;text-align:left;">
+            <li>NX Part File</li>
+            <li>STEP Export File</li>
+            <li>PDF Drawing File</li>
+            <li>Generated History</li>
+        </ul>
+
+        <a href="/generated-parts/">View Generated Parts</a>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Generate NX Part</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+
+            <span>NX PART GENERATOR</span>
+
+            <h3>Create a New NX Part Request</h3>
+
+            <p>
+                Enter part details in the NX Part Request API. The NX automation
+                service will read the request, generate output file records and
+                save generated part data back to Django.
+            </p>
+
+            <a href="/api/nx-part-requests/">Open NX Part Request API</a>
+
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/ai.jpg' %}" alt="AI NX">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>NX Output Files</h2>
+
+    <div class="success-box">
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}" alt="NX Output">
+        </div>
+
+        <div class="success-content">
+
+            <span>GENERATED FILES</span>
+
+            <h3>NX, STEP and PDF Outputs</h3>
+
+            <p>
+                Generated part records store NX part file name, STEP export
+                file name and PDF drawing file name. Later these fields can be
+                connected to real Siemens NX Open API exports.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>Download NX File</li>
+                <li>Download STEP File</li>
+                <li>Download PDF Drawing</li>
+                <li>Track Generated History</li>
+            </ul>
+
+            <a href="/generated-parts/">View Generated Parts Page</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>AI + NX Integration</h2>
+
+    <div class="success-box">
+
+        <div class="success-image">
+            <img src="{% static 'images/ai.jpg' %}" alt="AI NX">
+        </div>
+
+        <div class="success-content">
+
+            <span>SMART AI</span>
+
+            <h3>AI Powered NX Manufacturing</h3>
+
+            <p>
+                Artificial Intelligence can analyze production data,
+                machine performance and manufacturing trends.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>Predict Machining Time</li>
+                <li>Predict Material Cost</li>
+                <li>Predict Machine Utilization</li>
+                <li>Production Delay Prediction</li>
+                <li>Downtime Analysis</li>
+            </ul>
+
+            <a href="/ai-recommendation/">Open AI Recommendation</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>Smart Manufacturing ERP</h2>
+            <p>
+                Siemens NX + ERP + AI = Complete Smart Factory Solution
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>NX Features</h3>
+
+            <ul>
+                <li>CAD Automation</li>
+                <li>CAM Automation</li>
+                <li>Drawing Vault</li>
+                <li>Part Generator</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Manufacturing</h3>
+
+            <ul>
+                <li>CNC Machines</li>
+                <li>Production Control</li>
+                <li>Quality Assurance</li>
+                <li>Inventory Management</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Technology</h3>
+
+            <ul>
+                <li>Django REST API</li>
+                <li>SQL Server</li>
+                <li>Siemens NX Open API</li>
+                <li>Artificial Intelligence</li>
+            </ul>
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+fetch('/api/nx-dashboard/')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('total-requests').innerText = data.total_requests;
+    document.getElementById('pending-requests').innerText = data.pending_requests;
+    document.getElementById('generated-parts').innerText = data.generated_parts;
+})
+.catch(error => {
+    console.log("NX Dashboard API Error:", error);
+});
+</script>
+
+</body>
+</html>

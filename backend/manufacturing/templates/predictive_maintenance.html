@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predictive Maintenance</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=230">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Predictive Maintenance</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>AI Predictive Maintenance</h1>
+    <p>Monitor machine health and prevent breakdowns before they occur.</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="health-score">95%</h1>
+        <p>Machine Health</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="remaining-life">180</h1>
+        <p>Remaining Days</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="risk-level">LOW</h1>
+        <p>Failure Risk</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Maintenance Recommendation</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+
+            <span>AI ANALYSIS</span>
+
+            <h3>Machine Condition Report</h3>
+
+            <ul style="line-height:2;">
+                <li>Bearing Condition : Good</li>
+                <li>Spindle Health : Good</li>
+                <li>Motor Temperature : Normal</li>
+                <li>Lubrication Level : OK</li>
+                <li>Maintenance Required : No</li>
+            </ul>
+
+            <h2 style="color:green;">
+                ✓ Machine Running Normally
+            </h2>
+
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}">
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart ERP Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=205">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Smart Manufacturing Dashboard</h2>
+    <a href="/">Back to Home</a>
+</nav>
+
+<section class="module-title">
+    <h1>Live ERP Analytics Dashboard</h1>
+    <p>Real-time data from Django REST API</p>
+</section>
+
+<section class="stats-section">
+    <div class="stat-box">
+        <h1 id="employees">0</h1>
+        <p>Employees</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="inventory">0</h1>
+        <p>Inventory Items</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="machines">0</h1>
+        <p>Machines</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="production">0</h1>
+        <p>Production Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="quality">0</h1>
+        <p>Quality Inspections</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="ai">0</h1>
+        <p>AI Predictions</p>
+    </div>
+</section>
+
+<section class="dashboard-charts">
+    <div class="chart-card">
+        <h2>ERP Module Summary</h2>
+        <canvas id="erpChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h2>Production vs Quality</h2>
+        <canvas id="productionChart"></canvas>
+    </div>
+</section>
+
+<script>
+fetch('/api/dashboard/')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('employees').innerText = data.total_employees;
+    document.getElementById('inventory').innerText = data.total_inventory;
+    document.getElementById('machines').innerText = data.total_machines;
+    document.getElementById('production').innerText = data.total_production_orders;
+    document.getElementById('quality').innerText = data.total_quality_inspections;
+    document.getElementById('ai').innerText = data.total_ai_predictions;
+
+    new Chart(document.getElementById('erpChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Employees', 'Inventory', 'Machines', 'Production', 'Quality', 'AI'],
+            datasets: [{
+                label: 'ERP Count',
+                data: [
+                    data.total_employees,
+                    data.total_inventory,
+                    data.total_machines,
+                    data.total_production_orders,
+                    data.total_quality_inspections,
+                    data.total_ai_predictions
+                ]
+            }]
+        }
+    });
+
+    new Chart(document.getElementById('productionChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Production Orders', 'Quality Inspections'],
+            datasets: [{
+                data: [
+                    data.total_production_orders,
+                    data.total_quality_inspections
+                ]
+            }]
+        }
+    });
+})
+.catch(error => console.log("Dashboard Error:", error));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recommendation | Smart Manufacturing ERP</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+        }
+
+        .navbar{
+            background:#111827;
+            padding:20px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .navbar a{
+            text-decoration:none;
+            color:white;
+            background:#2563eb;
+            padding:10px 18px;
+            border-radius:5px;
+        }
+
+        .hero{
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .hero h1{
+            font-size:42px;
+            margin-bottom:15px;
+        }
+
+        .hero p{
+            color:#cbd5e1;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:auto;
+            padding:30px;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            color:black;
+            padding:25px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .card h3{
+            color:#2563eb;
+            margin-bottom:10px;
+        }
+
+        .status-box{
+            margin-top:40px;
+            background:white;
+            color:black;
+            padding:30px;
+            border-radius:10px;
+        }
+
+        .status{
+            color:green;
+            font-weight:bold;
+            margin-top:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>AI Recommendation Engine</h2>
+
+    <a href="/nx-automation/">
+        Back To NX Automation
+    </a>
+</div>
+
+<section class="hero">
+
+    <h1>AI Powered Manufacturing Intelligence</h1>
+
+    <p>
+        Smart recommendations generated using manufacturing analytics
+        and production optimization logic.
+    </p>
+
+</section>
+
+<div class="container">
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Material</h3>
+            <p>Steel</p>
+        </div>
+
+        <div class="card">
+            <h3>Recommended Machine</h3>
+            <p>VMC-01</p>
+        </div>
+
+        <div class="card">
+            <h3>Tool</h3>
+            <p>End Mill</p>
+        </div>
+
+        <div class="card">
+            <h3>Machining Time</h3>
+            <p>25 Minutes</p>
+        </div>
+
+        <div class="card">
+            <h3>Estimated Cost</h3>
+            <p>₹1200</p>
+        </div>
+
+        <div class="card">
+            <h3>Machine Utilization</h3>
+            <p>92%</p>
+        </div>
+
+    </div>
+
+    <div class="status-box">
+
+        <h2>AI Recommendation Summary</h2>
+
+        <br>
+
+        <p>
+            Based on historical manufacturing data, machine performance,
+            production efficiency and material availability,
+            the AI engine recommends machining this component
+            on VMC-01 using an End Mill cutter.
+        </p>
+
+        <p class="status">
+            ✓ Recommendation Approved
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Management</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=270">
+</head>
+
+<body class="modules-page">
+
+<nav class="module-navbar">
+    <h2>Purchase Management</h2>
+    <a href="/">Back Home</a>
+</nav>
+
+<section class="page-banner">
+    <h1>Purchase Order Dashboard</h1>
+    <p>Manage vendor purchase orders, material procurement and approval status.</p>
+</section>
+
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h1 id="total-po">0</h1>
+        <p>Total Purchase Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="approved-po">0</h1>
+        <p>Approved Orders</p>
+    </div>
+
+    <div class="stat-box">
+        <h1 id="pending-po">0</h1>
+        <p>Pending Orders</p>
+    </div>
+
+</section>
+
+<section class="success-section">
+
+    <h2>Purchase Overview</h2>
+
+    <div class="success-box">
+
+        <div class="success-content">
+            <span>PROCUREMENT MANAGEMENT</span>
+
+            <h3>Smart Purchase Order System</h3>
+
+            <p>
+                This module manages vendor purchase orders, material quantity,
+                unit price, total cost and approval workflow.
+            </p>
+
+            <ul style="line-height:2;">
+                <li>Vendor Linked Purchase Orders</li>
+                <li>Automatic Total Cost Calculation</li>
+                <li>Pending / Approved Status</li>
+                <li>Material Procurement Tracking</li>
+            </ul>
+
+            <h2>
+                Total Purchase Value: ₹<span id="purchase-value">0</span>
+            </h2>
+
+            <br>
+
+            <a href="/api/purchase-orders/">Open Purchase Order API</a>
+        </div>
+
+        <div class="success-image">
+            <img src="{% static 'images/factory.jpg' %}">
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+fetch('/api/purchase-dashboard/')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('total-po').innerText = data.total_purchase_orders;
+    document.getElementById('approved-po').innerText = data.approved_orders;
+    document.getElementById('pending-po').innerText = data.pending_orders;
+    document.getElementById('purchase-value').innerText = data.total_purchase_value;
+});
+</script>
+
+</body>
+</html>
