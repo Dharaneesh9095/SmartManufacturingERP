@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Employee(models.Model):
-    employee_code = models.CharField(max_length=50, unique=True, default="EMP001")
+    employee_code = models.CharField(max_length=50, blank=True, null=True)
     name = models.CharField(max_length=100)
     department = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
@@ -10,6 +10,8 @@ class Employee(models.Model):
     qr_code = models.CharField(max_length=100, blank=True, null=True)
 
     def save(self, *args, **kwargs):
+        if not self.employee_code:
+            self.employee_code = f"EMP{self.pk or ''}"
         if not self.qr_code:
             self.qr_code = self.employee_code
         super().save(*args, **kwargs)
@@ -97,10 +99,7 @@ class NXPartGenerator(models.Model):
     bolt_diameter = models.FloatField()
     bolt_length = models.FloatField()
     material = models.CharField(max_length=100)
-    output_type = models.CharField(
-        max_length=100,
-        default="NX 3D Model, PDF, STEP"
-    )
+    output_type = models.CharField(max_length=100, default="NX 3D Model, PDF, STEP")
 
     def __str__(self):
         return self.part_name
