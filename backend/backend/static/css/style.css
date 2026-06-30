@@ -21,12 +21,13 @@ img{
 /* HOME HERO */
 .hero{
     min-height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("../images/factory.jpg");
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("/static/images/itg.jpg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
 }
-
 .navbar{
     width:90%;
     margin:auto;
@@ -273,10 +274,16 @@ img{
     margin:auto;
 }
 
+.success-image{
+    width:100%;
+    display:block;
+}
+
 .success-image img{
     width:100%;
     height:460px;
     object-fit:cover;
+    display:block;
     border-radius:16px;
 }
 
@@ -464,9 +471,12 @@ img{
 
 .materials-hero{
     min-height:70vh;
-    background:linear-gradient(rgba(17,24,39,0.75), rgba(17,24,39,0.75)), url("../images/factory.jpg");
+    background:
+        linear-gradient(rgba(17,24,39,0.75), rgba(17,24,39,0.75)),
+        url("/static/images/factory.jpg");
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
 }
 
 .materials-overlay{
@@ -804,9 +814,12 @@ img{
 
 .production-hero{
     min-height:75vh;
-    background:linear-gradient(rgba(3,7,18,0.75), rgba(3,7,18,0.75)), url("../images/factory.jpg");
+    background:
+        linear-gradient(rgba(3,7,18,0.75), rgba(3,7,18,0.75)),
+        url("/static/images/factory.jpg");
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     color:white;
 }
 
@@ -916,9 +929,12 @@ img{
 
 .quality-hero{
     min-height:75vh;
-    background:linear-gradient(rgba(6,78,59,0.75), rgba(17,24,39,0.8)), url("../images/quality.jpg");
+    background:
+        linear-gradient(rgba(6,78,59,0.75), rgba(17,24,39,0.8)),
+        url("/static/images/quality.jpg");
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     color:white;
 }
 
@@ -966,53 +982,7 @@ img{
     border-radius:25px;
 }
 
-/* RESPONSIVE */
-@media(max-width:1000px){
-    .stats-section,
-    .segment-grid,
-    .success-box,
-    .module-grid,
-    .material-summary,
-    .production-kpi,
-    .quality-cards,
-    .material-dashboard,
-    .production-overview,
-    .quality-overview,
-    .process-line,
-    .machine-grid,
-    .flow-grid,
-    .inspection-grid,
-    .defect-grid,
-    .ai-material,
-    .ai-production,
-    .ncr-section,
-    .ai-quality{
-        grid-template-columns:1fr;
-    }
-
-    .feature-list,
-    .overview-points,
-    .quality-list,
-    .ai-quality-list{
-        grid-template-columns:1fr;
-    }
-
-    .footer-container{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .stat-box h1{
-        font-size:70px;
-    }
-
-    .materials-hero-content h1,
-    .production-hero-content h1,
-    .quality-hero-content h1{
-        font-size:44px;
-    }
-}
-
+/* DASHBOARD CHARTS */
 .dashboard-charts{
     width:90%;
     margin:70px auto;
@@ -1032,6 +1002,8 @@ img{
     text-align:center;
     margin-bottom:25px;
 }
+
+/* NX FORM */
 .nx-form{
     display:grid;
     gap:15px;
@@ -1060,6 +1032,55 @@ img{
 .nx-form button:hover{
     background:#ff5a1f;
 }
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+    .stats-section,
+    .segment-grid,
+    .success-box,
+    .module-grid,
+    .material-summary,
+    .production-kpi,
+    .quality-cards,
+    .material-dashboard,
+    .production-overview,
+    .quality-overview,
+    .process-line,
+    .machine-grid,
+    .flow-grid,
+    .inspection-grid,
+    .defect-grid,
+    .ai-material,
+    .ai-production,
+    .ncr-section,
+    .ai-quality,
+    .dashboard-charts{
+        grid-template-columns:1fr;
+    }
+
+    .feature-list,
+    .overview-points,
+    .quality-list,
+    .ai-quality-list{
+        grid-template-columns:1fr;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .stat-box h1{
+        font-size:70px;
+    }
+
+    .materials-hero-content h1,
+    .production-hero-content h1,
+    .quality-hero-content h1{
+        font-size:44px;
+    }
+}
+
 @media(max-width:768px){
     .navbar,
     .module-navbar,

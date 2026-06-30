@@ -2,10 +2,17 @@ from django.db import models
 
 
 class Employee(models.Model):
+    employee_code = models.CharField(max_length=50, unique=True, default="EMP001")
     name = models.CharField(max_length=100)
     department = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
     salary = models.FloatField(default=0)
+    qr_code = models.CharField(max_length=100, blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.qr_code:
+            self.qr_code = self.employee_code
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -14,7 +21,10 @@ class Employee(models.Model):
 class Attendance(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
-    status = models.CharField(max_length=20)
+    check_in_time = models.TimeField(auto_now_add=True)
+    check_out_time = models.TimeField(blank=True, null=True)
+    status = models.CharField(max_length=20, default="Present")
+    scan_method = models.CharField(max_length=50, default="QR Scan")
 
     def __str__(self):
         return f"{self.employee.name} - {self.status}"
@@ -116,6 +126,7 @@ class AIPrediction(models.Model):
     def __str__(self):
         return "AI Prediction"
 
+
 class NXGeneratedPart(models.Model):
     part_name = models.CharField(max_length=100)
     nx_file = models.CharField(max_length=255)
@@ -125,6 +136,7 @@ class NXGeneratedPart(models.Model):
 
     def __str__(self):
         return self.part_name
+
 
 class Vendor(models.Model):
     vendor_name = models.CharField(max_length=100)
@@ -155,6 +167,7 @@ class PurchaseOrder(models.Model):
     def __str__(self):
         return self.po_number
 
+
 class Customer(models.Model):
     customer_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
@@ -181,6 +194,7 @@ class SalesOrder(models.Model):
 
     def __str__(self):
         return self.so_number
+
 
 class Warehouse(models.Model):
     warehouse_name = models.CharField(max_length=100)

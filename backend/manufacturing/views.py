@@ -16,7 +16,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-def modules(request):
+def modules(request):  
     return render(request, 'modules.html')
 
 
