@@ -16,8 +16,8 @@ from .models import (
     PurchaseOrder,
     Customer,
     SalesOrder,
-    
 )
+
 admin.site.register(Employee)
 admin.site.register(Attendance)
 admin.site.register(Leave)
